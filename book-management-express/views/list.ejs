@@ -1,0 +1,23 @@
+<%- include header %>
+<a href="/create-book/">Create Book</a>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+<% books.forEach(function(book) { %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.price %></td>
+    <td><%= book.description %></td>
+    <td><a class="delete-book" href="#" data-id="<%= book._id %>">Delete</a></td>
+  </tr>
+<% }) %>
+  </tbody>
+</table>
+<%- include footer %>
